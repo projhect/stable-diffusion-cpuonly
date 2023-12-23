@@ -1456,5 +1456,5 @@ demo = gr.TabbedInterface(
 """
 )
 
-demo.queue(concurrency_count=1)
+demo.queue()
 demo.launch()
