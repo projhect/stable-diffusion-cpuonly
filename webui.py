@@ -1262,7 +1262,7 @@ img2img_interface = gr.Interface(
     wrap_gradio_call(img2img),
     inputs=[
         gr.Textbox(placeholder="A fantasy landscape, trending on artstation.", lines=1),
-        gr.Image(value=sample_img2img, source="upload", interactive=True, type="pil"),
+        gr.Image(value=sample_img2img, interactive=True, type="pil"),
         gr.Slider(minimum=1, maximum=150, step=1, label="Sampling Steps", value=20),
         gr.Radio(label='Sampling method', choices=[x.name for x in samplers_for_img2img], value=samplers_for_img2img[0].name, type="index"),
         gr.Checkbox(label='Fix faces using GFPGAN', value=False, visible=have_gfpgan),
@@ -1333,7 +1333,7 @@ def run_extras(image, GFPGAN_strength, RealESRGAN_upscaling, RealESRGAN_model_in
 extras_interface = gr.Interface(
     wrap_gradio_call(run_extras),
     inputs=[
-        gr.Image(label="Source", source="upload", interactive=True, type="pil"),
+        gr.Image(label="Source", interactive=True, type="pil"),
         gr.Slider(minimum=0.0, maximum=1.0, step=0.001, label="GFPGAN strength", value=1, interactive=have_gfpgan),
         gr.Slider(minimum=1.0, maximum=4.0, step=0.05, label="Real-ESRGAN upscaling", value=2, interactive=have_realesrgan),
         gr.Radio(label='Real-ESRGAN model', choices=[x.name for x in realesrgan_models], value=realesrgan_models[0].name, type="index", interactive=have_realesrgan),
@@ -1367,7 +1367,7 @@ def run_pnginfo(image):
 pnginfo_interface = gr.Interface(
     wrap_gradio_call(run_pnginfo),
     inputs=[
-        gr.Image(label="Source", source="upload", interactive=True, type="pil"),
+        gr.Image(label="Source", interactive=True, type="pil"),
     ],
     outputs=[
         gr.HTML(),
