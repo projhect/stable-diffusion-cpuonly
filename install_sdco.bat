@@ -14,7 +14,7 @@ call pip install -e git+https://github.com/CompVis/taming-transformers.git@maste
 call pip install -e git+https://github.com/openai/CLIP.git@main#egg=clip
 call pip install -e git+https://github.com/TencentARC/GFPGAN#egg=GFPGAN
 call pip install -e git+https://github.com/xinntao/Real-ESRGAN#egg=realesrgan
-call pip install -e git+https://github.com/hlky/k-diffusion-sd#egg=k_diffusion
+call pip install -e git+https://github.com/crowsonkb/k-diffusion#egg=k_diffusion
 copy sd-v1-4.ckpt "models/ldm/stable-diffusion-v1/model.ckpt"
 del sd-v1-4.ckpt
 copy GFPGANv1.3.pth "src/gfpgan/experiments/pretrained_models/GFPGANv1.3.pth"
